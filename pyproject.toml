@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "skp-6-course-28-hw"
+version = "0.1.0"
+description = ""
+authors = ["Stereo2025 <teneloks@gmail.com>"]
+readme = "README.md"
+packages = [{include = "skp_6_course_28_hw"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.1.4"
+psycopg2-binary = "^2.9.5"
+pillow = "^9.3.0"
+djangorestframework = "^3.14.0"
+djangorestframework-simplejwt = "^5.2.2"
+pytest-django = "^4.5.2"
+pytest-factoryboy = "^2.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
