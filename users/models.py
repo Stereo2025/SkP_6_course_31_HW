@@ -34,7 +34,7 @@ class User(AbstractUser):
     password = models.CharField(max_length=1000)
     role = models.CharField(max_length=9, choices=ROLES, default="member")
     age = models.PositiveIntegerField(null=True, blank=True)
-    birth_date = models.DateTimeField(validators=[check_birth_date])
+    birth_date = models.DateTimeField(validators=[check_birth_date], null=True)
     email = models.EmailField(verbose_name='EmailAddress', blank=True,
                               validators=[RegexValidator(
                                   regex="@rambler.ru", inverse_match=True,

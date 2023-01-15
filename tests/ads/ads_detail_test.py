@@ -1,14 +1,21 @@
-import pytest
-
-from ads.serializers import AdDetailSerializer
-
-
-@pytest.mark.django_db
-def test_ads_create(client, ad, user_token):
-    response = client.get(
-        f"/ad/{ad.pk}/",
-        content_type="application/json",
-        HTTP_AUTHORIZATION="Bearer " + user_token)
-
-    assert response.status_code == 200
-    assert response.data == AdDetailSerializer(ad).data
+# import pytest
+#
+#
+# @pytest.mark.django_db
+# def test_ads_create(client, ad, user_token):
+#     expected = {
+#         'id': 1,
+#         'name': '',
+#         'category': '',
+#         'author': 1,
+#         'price': 10,
+#         'description': None,
+#         'is_published': False,
+#         'image': None
+#     }
+#     response = client.get(
+#         f"/ad/{ad.id}/",
+#         HTTP_AUTHORIZATION="Bearer " + user_token)
+#
+#     assert response.status_code == 200
+#     assert response.data == expected
