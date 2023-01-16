@@ -9,7 +9,7 @@ def test_ads_create(client, ad, user_token):
         "author": ad.author.pk,
         "name": ad.name,
         "price": ad.price,
-        "description": None,
+        "description": ad.description,
         "is_published": False,
         "category": ad.category.name,
         "image": ad.image.url if ad.image else None
