@@ -1,4 +1,5 @@
 import pytest
+from rest_framework import status
 
 from tests.factories import AdFactory
 
@@ -29,5 +30,5 @@ def test_ads_list(client):
         "total": 4,
     }
 
-    assert response.status_code == 200
+    assert response.status_code == status.HTTP_200_OK
     assert response.json() == expected_response

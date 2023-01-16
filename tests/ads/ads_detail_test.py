@@ -4,14 +4,14 @@ import pytest
 @pytest.mark.django_db
 def test_ads_create(client, ad, user_token):
     expected = {
-        'id': 2,
-        'name': '',
-        'category': '',
-        'author': 3,
-        'price': 10,
-        'description': None,
-        'is_published': False,
-        'image': None
+        "id": ad.id,
+        "author": ad.author.pk,
+        "name": ad.name,
+        "price": ad.price,
+        "description": None,
+        "is_published": False,
+        "category": ad.category.name,
+        "image": ad.image.url if ad.image else None
     }
     response = client.get(
         f"/ad/{ad.id}/",
